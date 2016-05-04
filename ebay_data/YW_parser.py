@@ -103,7 +103,12 @@ def parseJson(json_file):
             # Create Users.dat file
             # append seller's information, including UserID, Rating, Location and Country 
             # append all the bidders information into Users.dat file, if Location and Country not available use 'NULL' instead
-            # Note: This Users.dat file needs to remove duplicates later
+            # Note1: This Users.dat file needs to remove duplicates later. Done in shell script
+            # Note2: Need to escape quotation marks 
+                # 1. escape every instance of a double quote with another double quote
+                # 2. surround all strings with double quotes
+
+
             with open('Users_YW.dat', 'a') as f_users:
                 f_users.write(item['Seller']['UserID'] + columnSeparator + item['Seller']['Rating'] + \
                 	columnSeparator + item['Location'] + columnSeparator + item['Country'] + '\n')
